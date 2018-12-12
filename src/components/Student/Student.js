@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import BackButton from './../../assets/icons8-go-back-96.png'
 export default class Student extends Component {
   constructor() {
     super();
@@ -21,7 +22,7 @@ export default class Student extends Component {
   }
 
   render() {
-    console.log(this.state.studentInfo)
+    // console.log(this.props.match.params.id)
     return (
       <div className="box">
         <h1>Student</h1>
@@ -29,7 +30,7 @@ export default class Student extends Component {
         <h3>Grade: {this.state.studentInfo.grade}</h3>
         <h3>Email: {this.state.studentInfo.email}</h3>
         <Link to={`/classlist/${this.state.studentInfo.class}`}>
-        <button>Back</button>
+        <img width='65' src={BackButton} alt=""/>
         </Link>
       </div>
     );

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import BackButton from './../../assets/icons8-go-back-96.png'
+
 export default class ClassList extends Component {
   constructor() {
     super();
@@ -24,6 +26,7 @@ export default class ClassList extends Component {
   }
 
   render() {
+    // console.log(this.props.match.params.class)
     let classList = this.state.students.map(student => (
       <Link to={`/student/${student.id}`} key={student.id}>
         <h3>
@@ -36,7 +39,7 @@ export default class ClassList extends Component {
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:{classList}</h2>
         <Link to={`/`}>
-          <button>Back</button>
+         <img width='65' src={BackButton} alt=""/>
         </Link>
       </div>
     );

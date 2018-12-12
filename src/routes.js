@@ -13,3 +13,4 @@ export default (
     <Route component={Student} path="/student/:id" />
   </Switch>
 );
+
